@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func changeQuote() {
+        quoteLabel.text = "Le texte est modifié"
+        print("ça marche")
     }
     
 }
