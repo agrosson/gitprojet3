@@ -9,14 +9,29 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var celebrities = ["le Steve Jobs","le Brian Ferry","le N'Golo Kanté", "la Madonna", "le Pape"]
+    var activities = ["du dancefloor", "de la surprise ratée", "des blagues lourdes", "du développement ios"]
+    
    
     @IBOutlet weak var quoteLabel: UILabel!
     
     
     @IBAction func changeQuote() {
-        quoteLabel.text = "Le texte est modifié"
-        print("ça marche")
+        
+        // Old version of random
+        let randomIndex = Int(arc4random_uniform(UInt32(celebrities.count)))
+        let randomCelebrity = celebrities[randomIndex]
+        
+        let randomIndex2 = Int(arc4random_uniform(UInt32(activities.count)))
+        let randomActivity = activities[randomIndex2]
+        
+        quoteLabel.text = "Tu es \(randomCelebrity ) \(randomActivity)"
+        
+        // New version of random with swift 4.2
+        
+       // quoteLabel.text = "Tu es \(celebrities.randomElement()!) \(activities.randomElement()!)"
+       
+        // print(celebrities.randomElement()!)
     }
     
 }
